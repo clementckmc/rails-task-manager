@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Add a new Task</h1>
+  <% if @task.errors.messages%>
+    <% @task.errors.messages.each do |key, value| %>
+    <div class="alert alert-danger" role="alert" role="alert">
+      <p><%= "#{key}: #{value[0]}" %></p>
+    </div>
+    <% end %>
+  <% end %>
+
+  <%= render "form", task: @task %>
+  <br>
+  <%= link_to "Back to list", tasks_path, class:"btn btn-light" %>
+
+</div>
